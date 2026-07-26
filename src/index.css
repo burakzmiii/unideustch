@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-surface: #0F172A;
+    --color-surface-2: #1E293B;
+    --color-card: #1E293B;
+    --color-card-hover: #263548;
+    --color-border: #334155;
+    --color-border-light: #475569;
+    --color-text: #F1F5F9;
+    --color-text-muted: #94A3B8;
+    --color-text-subtle: #64748B;
+    --color-input-bg: #1E293B;
+  }
+
+  [data-theme='light'] {
+    --color-surface: #F8FAFC;
+    --color-surface-2: #FFFFFF;
+    --color-card: #FFFFFF;
+    --color-card-hover: #F1F5F9;
+    --color-border: #E2E8F0;
+    --color-border-light: #CBD5E1;
+    --color-text: #0F172A;
+    --color-text-muted: #475569;
+    --color-text-subtle: #94A3B8;
+    --color-input-bg: #F1F5F9;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-light) var(--color-surface);
+  }
+
+  html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background-color: rgba(37, 99, 235, 0.4);
+    color: var(--color-text);
+  }
+
+  input, textarea, select {
+    color-scheme: dark;
+  }
+
+  [data-theme='light'] input,
+  [data-theme='light'] textarea,
+  [data-theme='light'] select {
+    color-scheme: light;
+  }
+}
